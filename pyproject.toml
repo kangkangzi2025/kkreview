@@ -1,0 +1,21 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "kkreview"
+version = "0.1.0"
+description = "Code review training tool powered by Claude"
+requires-python = ">=3.12"
+dependencies = [
+    "anthropic>=0.40.0,<1.0.0",
+    "typer>=0.9.0,<1.0.0",
+    "rich>=13.0.0,<15.0.0",
+    "pydantic>=2.0.0,<3.0.0",
+]
+
+[project.scripts]
+kkreview = "kkreview.cli:app"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/kkreview"]
